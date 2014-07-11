@@ -14,6 +14,12 @@ if ! check_package "openssl;"; then
 	package_install openssl
 fi
 
+# Install libssl for debian 7.
+
+wget http://snapshot.debian.org/archive/debian/20110406T213352Z/pool/main/o/openssl098/libssl0.9.8_0.9.8o-7_amd64.deb
+dpkg -i libssl0.9.8_0.9.8o-7_amd64.deb
+rm libssl0.9.8_0.9.8o-7_amd64.deb
+
 # Install Package
 subheader "Installing Package..."
 package_install nginx
